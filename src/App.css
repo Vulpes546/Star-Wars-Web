@@ -1,0 +1,12 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url("./assets/night_sky.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    color: #FFE81F;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-size: 1.6em;
+}

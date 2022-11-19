@@ -1,0 +1,14 @@
+article {
+    border-radius: 10px;
+    backdrop-filter: blur(7px);
+    background-color: rgba(100%, 100%, 100%, 2%);
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    color: #FFE81F;
+    text-align: left;
+}
+
+h2 {
+    margin-bottom: 40px;
+    text-align: center;
+}

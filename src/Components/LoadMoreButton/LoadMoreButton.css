@@ -1,0 +1,24 @@
+button {
+    align-self: center;
+    margin-bottom: 50px;
+    padding: 20px 30px;
+    font-size: 1.2rem;
+    border: none;
+    background-color: #FFE81F;
+    color: black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background-color: #999;
+}
+
+button:hover {
+    background-color: #FFD700;
+}
+
+button:active {
+    background-color: #FFD700;
+    transform: scale(0.95);
+}
