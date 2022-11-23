@@ -15,11 +15,9 @@ function App() {
 
     useEffect(() => {
         async function addCharacter(currNum, expNum, newCharacters = []) {
-            console.log(newCharacters);
             if (!(currNum <= expNum)) {
                 return Promise.resolve(newCharacters);
             }
-            console.log(currNum);
             const response = await fetch(`https://swapi.dev/api/people/${currNum}/`);
             if (response.ok) {
                 const character = await response.json();
@@ -31,7 +29,6 @@ function App() {
         }
 
         addCharacter(state.currCharNum, state.expCharNum).then((newCharacters) => {
-            console.log(newCharacters);
             setState((prevState) => {
                 return {
                     ...prevState,
@@ -40,7 +37,6 @@ function App() {
                     buttonDisabled: false
                 }
             })
-            console.log(state.characters);
             setTimeout(() => {
                 window.scrollTo({
                     top: document.body.scrollHeight,
