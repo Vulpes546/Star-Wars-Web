@@ -19,13 +19,12 @@ function App() {
                 return Promise.resolve(newCharacters);
             }
             const response = await fetch(`https://swapi.dev/api/people/${currNum}/`);
-            if (response.ok) {
-                const character = await response.json();
-                newCharacters.push(character);
-                return addCharacter(currNum + 1, expNum, newCharacters);
-            } else {
+            if (!response.ok) {
                 return addCharacter(currNum + 1, expNum, newCharacters);
             }
+            const character = await response.json();
+            newCharacters.push(character);
+            return addCharacter(currNum + 1, expNum, newCharacters);
         }
 
         addCharacter(state.currCharNum, state.expCharNum).then((newCharacters) => {

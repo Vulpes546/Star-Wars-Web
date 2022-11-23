@@ -4,19 +4,17 @@ import {useEffect, useState} from "react";
 export default function CharacterCard({character}) {
     const [state, setState] = useState({character: {...character}, species: []})
     useEffect(() => {
-        if (state.character.species !== []) {
-            for (const url of state.character.species) {
-                fetch(url)
-                    .then((response) => response.json())
-                    .then((specie) => {
-                        setState((oldState) => {
-                            return {
-                                ...oldState,
-                                species: [...oldState.species, specie]
-                            }
-                        })
+        for (const url of state.character.species) {
+            fetch(url)
+                .then((response) => response.json())
+                .then((specie) => {
+                    setState((oldState) => {
+                        return {
+                            ...oldState,
+                            species: [...oldState.species, specie]
+                        }
                     })
-            }
+                })
         }
     }, [character])
     return (
