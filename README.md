@@ -1,5 +1,9 @@
 # Star-Wars-Web
 
+## GitHub
+
+You can find the remote repo [here](https://github.com/Vulpes546/Star-Wars-Web).
+
 ## To run the app you have to:
 
 1. Install [node.js](https://nodejs.org/en/download/).
