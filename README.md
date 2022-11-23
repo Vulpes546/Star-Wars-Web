@@ -1,6 +1,6 @@
 # Star-Wars-Web
 
-##To run the app you have to:
+## To run the app you have to:
 
 1. Install [node.js](https://nodejs.org/en/download/).
 2. Run `npm install` in the project directory.
