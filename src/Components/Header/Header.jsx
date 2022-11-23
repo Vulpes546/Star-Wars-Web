@@ -4,7 +4,7 @@ import "./Header.css"
 export default function Header() {
     return (
         <header>
-            <img src={swLogo} alt="Star Wars logo"/>
+            <img className='swLogo' src={swLogo} alt="Star Wars logo"/>
         </header>
     )
 }

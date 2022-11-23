@@ -1,22 +1,32 @@
 import "./CharacterCard.css"
 import {useEffect, useState} from "react";
+import loadingWheel from "../../assets/loading-gif.gif"
 
 export default function CharacterCard({character}) {
-    const [state, setState] = useState({character: {...character}, species: []})
+    const [state, setState] = useState({character: {...character}, species: [{name: <img className="loading" src={loadingWheel} alt='loading wheel'/>}]});
     useEffect(() => {
-        for (const url of state.character.species) {
+        if (state.character.species[0]) {
+            const url = state.character.species[0];
             fetch(url)
                 .then((response) => response.json())
-                .then((specie) => {
+                .then((species) => {
                     setState((oldState) => {
                         return {
                             ...oldState,
-                            species: [...oldState.species, specie]
+                            species: [species]
                         }
                     })
                 })
+        } else {
+            setState((oldState) => {
+                return {
+                    ...oldState,
+                    species: [{name: "Human"}]
+                }
+            })
         }
     }, [character])
+    console.log(state.species);
     return (
         <article>
             <h2>{state.character.name}</h2>
